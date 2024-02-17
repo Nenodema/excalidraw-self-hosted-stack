@@ -1,11 +1,11 @@
-FROM node:18-alpine AS download
+FROM node:21-alpine AS download
 WORKDIR /opt/node_app
 
 RUN wget https://github.com/excalidraw/excalidraw/archive/refs/tags/v0.17.3.tar.gz -O excalidraw.tar.gz
 RUN tar -zvxf excalidraw.tar.gz
 RUN mv excalidraw-* excalidraw
 
-FROM node:18-alpine AS build
+FROM node:21-alpine AS build
 
 ARG PUB_SRV_NAME
 ARG PUB_SRV_NAME_WS
