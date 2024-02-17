@@ -27,7 +27,7 @@ RUN yarn --ignore-optional --network-timeout 600000
 COPY --from=download /opt/node_app/excalidraw/ .
 RUN yarn build:app:docker
 
-FROM nginx:1.21-alpine
+FROM nginx:1.25.4-alpine
 
 COPY --from=build /opt/node_app/build /usr/share/nginx/html
 
